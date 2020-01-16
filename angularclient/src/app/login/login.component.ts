@@ -23,7 +23,7 @@ export class LoginComponent {
 
     promise.then(authenticated => {
       if(authenticated){
-        this.router.navigate(['/' + Constants.LISTAGEM_PESSOAS]);
+        this.router.navigate(['/' + Constants.LISTAGEM_CLIENTES]);
       }
       else{
         this.message = "Usuário e senha não encontrados";

@@ -5,9 +5,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UsuarioService} from "./service/user-service.service";
-import { PessoaListComponent } from './pessoa-list/pessoa-list.component';
-import {PessoaService} from "./service/pessoa.service";
-import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
+import { ClienteListComponent } from './cliente-list/cliente-list.component';
+import {ClienteService} from "./service/cliente.service";
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import {IConfig, NgxMaskModule} from "ngx-mask";
 import { LoginComponent } from './login/login.component';
 import {AuthService} from "./service/auth.service";
@@ -19,8 +19,8 @@ export var options: Partial<IConfig> | (() => Partial<IConfig>);
 @NgModule({
   declarations: [
     AppComponent,
-    PessoaListComponent,
-    PessoaFormComponent,
+    ClienteListComponent,
+    ClienteFormComponent,
     LoginComponent,
     LogoutComponent
   ],
@@ -33,7 +33,7 @@ export var options: Partial<IConfig> | (() => Partial<IConfig>);
     ReactiveFormsModule,
     NgbPaginationModule,
   ],
-  providers: [UsuarioService, PessoaService, AuthService],
+  providers: [UsuarioService, ClienteService, AuthService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(authService: AuthService, private router: Router) {
     this.authenticated = authService.isAuthenticated();
-    this.title = 'Programa de estágio - Mirante Tecnologia';
+    this.title = 'Avalição para seleção - Desenvolvedor júnior';
     this.logged = authService.getLogged();
     Constants.APP_COMPONENT = this;
 
@@ -28,7 +28,7 @@ export class AppComponent {
   }
 
   gotoUserList() {
-    this.router.navigate(['/' + Constants.LISTAGEM_PESSOAS]);
+    this.router.navigate(['/' + Constants.LISTAGEM_CLIENTES]);
   }
 
   gotoLogin() {

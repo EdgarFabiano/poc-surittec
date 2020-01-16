@@ -1,5 +1,5 @@
 export enum Perfil {
 
-  ADMINISTRADOR, RELATOR
+  ADMIN, COMUM
 
 }

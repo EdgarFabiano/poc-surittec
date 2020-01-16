@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cliente of clientes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.cpf | mask:"000.000.000-00" }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.telefone | mask:"(00)00000-0000" }}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="editar(cliente.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-danger" (click)="excluir(cliente.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="length">  </ngb-pagination>

@@ -1,0 +1,46 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+
+<!--nome-->
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="cliente.nome"
+               class="form-control" id="nome" name="nome" placeholder="Digite seu nome"
+               required #nome="ngModel">
+      </div>
+      <div [hidden]="!nome.pristine" class="alert alert-danger">O nome é obrigatório</div>
+
+<!--cpf-->
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="cliente.cpf"
+               class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF"
+               mask="000.000.000-00"
+               required #cpf="ngModel">
+      </div>
+      <div [hidden]="!cpf.pristine" class="alert alert-danger">O CPF é obrigatório</div>
+
+<!--email-->
+      <div class="form-group">
+        <label for="cpf">E-mail</label>
+        <input type="text" [(ngModel)]="cliente.email"
+               class="form-control" id="email" name="email" placeholder="Digite seu E-mail"
+               required #email="ngModel">
+      </div>
+      <div [hidden]="!email.pristine" class="alert alert-danger">O E-mail é obrigatório</div>
+
+<!--Telefone-->
+      <div class="form-group">
+        <label for="cpf">Telefone</label>
+        <input type="text" [(ngModel)]="cliente.telefone"
+               class="form-control" id="telefone" name="telefone" placeholder="Digite seu Telefone"
+               mask="(00)00000-0000"
+               required #telefone="ngModel">
+      </div>
+      <div [hidden]="!telefone.pristine" class="alert alert-danger">O Telefone é obrigatório</div>
+
+      <button type="submit" [disabled]="!clienteForm.form.valid" class="btn btn-info">Salvar</button>
+    </form>
+  </div>
+</div>

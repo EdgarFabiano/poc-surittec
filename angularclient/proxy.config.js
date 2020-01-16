@@ -1,8 +1,7 @@
 const proxy = [
   {
-    context: '/api',
+    context: '/',
     target: 'http://localhost:8080',
-    pathRewrite: {'^/api' : ''}
   }
 ];
 module.exports = proxy;
