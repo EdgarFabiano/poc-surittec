@@ -54,9 +54,3 @@ local.properties
 ######################
 **/rebel.xml
 out/**
-
-# outros #
-*.jar
-buildall.sh
-_confHomol/
-flow/test/singulardb.trace.db.old
