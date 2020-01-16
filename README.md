@@ -22,6 +22,7 @@ $ java -jar target\poc-edgar-0.0.1-SNAPSHOT.jar
 Em outro terminal, executar a aplicação frontend na raíz do projeto
 ```
 $ cd angularclient
+$ npm install
 $ npm run start
 ```
 
