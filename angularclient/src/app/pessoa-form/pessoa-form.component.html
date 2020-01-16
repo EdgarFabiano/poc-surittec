@@ -1,0 +1,47 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #pessoaForm="ngForm">
+
+<!--nome-->
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="pessoa.nome"
+               class="form-control" id="nome" name="nome" placeholder="Digite seu nome"
+               required #nome="ngModel">
+      </div>
+      <div [hidden]="!nome.pristine" class="alert alert-danger">O nome é obrigatório</div>
+
+<!--cpf-->
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="pessoa.cpf"
+               class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF"
+               mask="000.000.000-00"
+               required #cpf="ngModel">
+      </div>
+      <div [hidden]="!cpf.pristine" class="alert alert-danger">O CPF é obrigatório</div>
+
+<!--nascimento-->
+      <div class="form-group">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="text" [(ngModel)]="pessoa.nascimento"
+               class="form-control" id="nascimento" name="nascimento" placeholder="Digite sua data de nascimento"
+               mask="00/00/0000"
+               required #nascimento="ngModel">
+      </div>
+      <div [hidden]="!nascimento.pristine" class="alert alert-danger">A data de nascimento é obrigatório</div>
+
+<!--curriculo-->
+      <div class="form-group">
+        <label for="curriculo">Currículo</label>
+        <textarea type="text" [(ngModel)]="pessoa.curriculo"
+               class="form-control" id="curriculo" name="curriculo" placeholder="Digite seu currículo"
+                  required #curriculo="ngModel"></textarea>
+      </div>
+      <div [hidden]="!curriculo.pristine" class="alert alert-danger">O currículo é obrigatório</div>
+
+
+      <button type="submit" [disabled]="!pessoaForm.form.valid" class="btn btn-info">Salvar</button>
+    </form>
+  </div>
+</div>

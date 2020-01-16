@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Nascimento</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pessoa of pessoas | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <td>{{ pessoa.id }}</td>
+        <td>{{ pessoa.nome }}</td>
+        <td>{{ pessoa.cpf | mask:"000.000.000-00" }}</td>
+        <td>{{ pessoa.nascimento | date: "dd/MM/yyyy" }}</td>
+        <td>endereço</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="editar(pessoa.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-danger" (click)="excluir(pessoa.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="length">  </ngb-pagination>
